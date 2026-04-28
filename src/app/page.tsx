@@ -1,65 +1,107 @@
-import Image from "next/image";
-
+import ContactForm from "@/components/ContactForm";
 export default function Home() {
+  
+  // THE DATA: When you build a new project, just add it to this list!
+  const projects = [
+    {
+      name: "MarketSpark AI",
+      description: "An AI-powered marketing engine leveraging Gemini 2.5 Flash. It ingests product features and autonomously generates high-converting LinkedIn posts, X threads, and email newsletters.",
+      tags: ["Next.js", "Gemini 2.5 API", "AI Automation"],
+      // We use gridClass to make this card bigger (Bento Box style)
+      gridClass: "col-span-1 md:col-span-2 lg:col-span-2 group relative border-slate-800 hover:border-cyan-500/50 overflow-hidden",
+      isFeatured: true
+    },
+    {
+      name: "CabinetFlow",
+      description: "A comprehensive management system designed to streamline workflows, handle complex data, and boost operational efficiency.",
+      tags: ["SaaS", "Full-Stack"],
+      gridClass: "col-span-1 border-slate-800 hover:border-slate-600"
+    },
+    {
+      name: "Mon Tbib",
+      description: "A healthcare platform connecting patients with doctors, making medical appointments and patient management entirely seamless.",
+      tags: ["Healthcare Tech"],
+      gridClass: "col-span-1 border-slate-800 hover:border-slate-600"
+    },
+    {
+      name: "Covoiturage TN",
+      description: "A dedicated ride-sharing application for Tunisia. Helps users find reliable carpooling options, split costs, and reduce their carbon footprint.",
+      tags: ["Mobile-Responsive", "Routing"],
+      gridClass: "col-span-1 md:col-span-2 lg:col-span-2 border-slate-800 hover:border-slate-600"
+    }
+  ];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen bg-slate-950 text-slate-50 font-sans p-6 md:p-12 lg:p-24 selection:bg-cyan-500/30">
+      
+      {/* Navbar */}
+      <nav className="max-w-5xl mx-auto flex justify-between items-center mb-16 md:mb-24">
+        <div className="text-xl font-bold tracking-tight text-white">
+          Mohamed <span className="text-cyan-400">Salhi</span>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <a href="#contact" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+          Contact Me
+        </a>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="max-w-5xl mx-auto mb-20">
+        <div className="inline-block px-3 py-1 mb-6 rounded-full bg-slate-900 border border-slate-800 text-cyan-400 text-sm font-medium tracking-wide">
+          Available for Work on Upwork
         </div>
-      </main>
-    </div>
+        <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+          Hi, I&apos;m Mohamed. <br className="hidden md:block" />
+          I build <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500">intelligent</span> web apps.
+        </h1>
+        <p className="text-xl md:text-2xl text-slate-400 max-w-2xl leading-relaxed">
+          Versatile Full-Stack Developer specializing in scalable systems, AI integrations, and high-performance user experiences.
+        </p>
+      </section>
+
+      {/* Projects Section */}
+      <section className="max-w-5xl mx-auto mb-24">
+        <h2 className="text-2xl font-semibold mb-8 text-slate-200 flex items-center gap-2">
+          <span className="w-8 h-[1px] bg-cyan-500"></span> Featured Work
+        </h2>
+        
+        {/* The Grid automatically maps over your projects array */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => (
+            <div key={index} className={`bg-slate-900 border rounded-3xl p-8 transition-colors ${project.gridClass}`}>
+              
+              {/* Optional glowing effect for featured projects */}
+              {project.isFeatured && (
+                <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
+              )}
+              
+              <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white relative z-10">{project.name}</h3>
+              <p className="text-slate-400 mb-6 relative z-10 text-sm md:text-lg">
+                {project.description}
+              </p>
+              
+              <div className="flex flex-wrap gap-2 relative z-10">
+                {project.tags.map((tag, tagIndex) => (
+                  <span key={tagIndex} className="bg-slate-950 border border-slate-800 text-cyan-400 text-xs md:text-sm px-3 md:px-4 py-1.5 rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      
+      {/* Contact Section Placeholder */}
+      {/* Contact Section */}
+      <section id="contact" className="max-w-xl mx-auto text-center pb-20">
+        <h2 className="text-2xl font-bold mb-4 text-white">Ready to start your project?</h2>
+        <p className="text-slate-400 mb-8">Send me a message and let&apos;s discuss how I can help.</p>
+        
+        {/* We use the new component here */}
+        <ContactForm />
+        
+      </section>
+
+    </main>
   );
 }
