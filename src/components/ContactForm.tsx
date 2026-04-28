@@ -1,46 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { supabase } from "@/lib/supabase";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("loading");
-
-    // Send data to Supabase
-    const { error } = await supabase
-      .from("messages")
-      .insert([
-        { name: formData.name, email: formData.email, message: formData.message }
-      ]);
-
-    if (error) {
-      console.error("Supabase Error Details:", JSON.stringify(error, null, 2));
-      setStatus("error");
-    } else {
-      setStatus("success");
-      setFormData({ name: "", email: "", message: "" }); // clear form
-    }
-  };
-
-  if (status === "success") {
-    return (
-      <div className="p-8 border border-cyan-500/30 bg-cyan-500/10 rounded-2xl text-center">
-        <h3 className="text-xl font-bold text-cyan-400 mb-2">Message Sent!</h3>
-        <p className="text-slate-300">Thanks for reaching out. I&apos;ll get back to you shortly.</p>
-        <button 
-          onClick={() => setStatus("idle")}
-          className="mt-6 text-sm text-slate-400 hover:text-white underline"
-        >
-          Send another message
-        </button>
-      </div>
-    );
-  }
 
   return (
     <form onSubmit={handleSubmit} className="p-8 border border-slate-800 bg-slate-900 rounded-2xl text-left">
