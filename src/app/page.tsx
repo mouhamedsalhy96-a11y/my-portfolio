@@ -1,13 +1,13 @@
-import ContactForm from "@/components/ContactForm";
 export default function Home() {
   
-  // THE DATA: When you build a new project, just add it to this list!
+  // Replace this with your actual Upwork Profile URL
+  const upworkLink = "https://www.upwork.com/freelancers/~0169de29d821388266";
+
   const projects = [
     {
       name: "MarketSpark AI",
       description: "An AI-powered marketing engine leveraging Gemini 2.5 Flash. It ingests product features and autonomously generates high-converting LinkedIn posts, X threads, and email newsletters.",
       tags: ["Next.js", "Gemini 2.5 API", "AI Automation"],
-      // We use gridClass to make this card bigger (Bento Box style)
       gridClass: "col-span-1 md:col-span-2 lg:col-span-2 group relative border-slate-800 hover:border-cyan-500/50 overflow-hidden",
       isFeatured: true
     },
@@ -39,46 +39,52 @@ export default function Home() {
         <div className="text-xl font-bold tracking-tight text-white">
           Mohamed <span className="text-cyan-400">Salhi</span>
         </div>
-        <a href="#contact" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
-          Contact Me
+        <a 
+          href={upworkLink} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors"
+        >
+          Hire Me on Upwork
         </a>
       </nav>
 
       {/* Hero Section */}
       <section className="max-w-5xl mx-auto mb-20">
         <div className="inline-block px-3 py-1 mb-6 rounded-full bg-slate-900 border border-slate-800 text-cyan-400 text-sm font-medium tracking-wide">
-          Available for Work on Upwork
+          Available for Work
         </div>
         <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
           Hi, I&apos;m Mohamed. <br className="hidden md:block" />
           I build <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500">intelligent</span> web apps.
         </h1>
-        <p className="text-xl md:text-2xl text-slate-400 max-w-2xl leading-relaxed">
+        <p className="text-xl md:text-2xl text-slate-400 max-w-2xl leading-relaxed mb-8">
           Versatile Full-Stack Developer specializing in scalable systems, AI integrations, and high-performance user experiences.
         </p>
+        <a 
+          href={upworkLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-white text-slate-950 font-bold px-8 py-4 rounded-full hover:bg-cyan-400 transition-all hover:scale-105 active:scale-95"
+        >
+          Start a Project
+        </a>
       </section>
 
       {/* Projects Section */}
-      <section className="max-w-5xl mx-auto mb-24">
+      <section className="max-w-5xl mx-auto mb-32">
         <h2 className="text-2xl font-semibold mb-8 text-slate-200 flex items-center gap-2">
           <span className="w-8 h-[1px] bg-cyan-500"></span> Featured Work
         </h2>
         
-        {/* The Grid automatically maps over your projects array */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div key={index} className={`bg-slate-900 border rounded-3xl p-8 transition-colors ${project.gridClass}`}>
-              
-              {/* Optional glowing effect for featured projects */}
               {project.isFeatured && (
                 <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
               )}
-              
               <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white relative z-10">{project.name}</h3>
-              <p className="text-slate-400 mb-6 relative z-10 text-sm md:text-lg">
-                {project.description}
-              </p>
-              
+              <p className="text-slate-400 mb-6 relative z-10 text-sm md:text-lg">{project.description}</p>
               <div className="flex flex-wrap gap-2 relative z-10">
                 {project.tags.map((tag, tagIndex) => (
                   <span key={tagIndex} className="bg-slate-950 border border-slate-800 text-cyan-400 text-xs md:text-sm px-3 md:px-4 py-1.5 rounded-full">
@@ -91,15 +97,23 @@ export default function Home() {
         </div>
       </section>
       
-      {/* Contact Section Placeholder */}
-      {/* Contact Section */}
-      <section id="contact" className="max-w-xl mx-auto text-center pb-20">
-        <h2 className="text-2xl font-bold mb-4 text-white">Ready to start your project?</h2>
-        <p className="text-slate-400 mb-8">Send me a message and let&apos;s discuss how I can help.</p>
-        
-        {/* We use the new component here */}
-        <ContactForm />
-        
+      {/* Updated Contact Section */}
+      <section id="contact" className="max-w-2xl mx-auto text-center pb-20">
+        <div className="p-12 border border-slate-800 bg-slate-900/50 rounded-[3rem] backdrop-blur-sm">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Let&apos;s build something great together.</h2>
+          <p className="text-slate-400 mb-10 text-lg">
+            I am currently accepting new projects on Upwork. Click the button below to view my profile and start a conversation.
+          </p>
+          <a 
+            href={upworkLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold py-4 px-10 rounded-2xl transition-all shadow-lg shadow-cyan-500/20"
+          >
+            Hire Me on Upwork
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
       </section>
 
     </main>
