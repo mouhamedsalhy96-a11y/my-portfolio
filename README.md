@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mohamed Salhi - Full-Stack Developer Portfolio 🚀
 
-## Getting Started
+A modern, high-performance personal portfolio built to showcase my versatile web applications, AI-integrated tools, and full-stack capabilities. Designed with a sleek dark-mode "Bento Box" UI and backed by a custom database to handle client inquiries.
 
-First, run the development server:
+**Live Site:** Insert Your Vercel Link Here]](https://my-portfolio-delta-seven-49.vercel.app/
+**Available for Hire:** https://www.upwork.com/freelancers/~0169de29d821388266
 
+---
+
+## 🛠️ Tech Stack
+
+This project was built with modern, industry-standard web technologies:
+
+*   **Framework:** [Next.js](https://nextjs.org/) (App Router)
+*   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+*   **Database / Backend:** [Supabase](https://supabase.com/) (PostgreSQL & Row Level Security)
+*   **Deployment:** [Vercel](https://vercel.com/)
+*   **Language:** TypeScript / TSX
+
+---
+
+## 💻 Featured Projects Showcased
+
+1.  **MarketSpark AI:** An AI-powered marketing engine leveraging Gemini 2.5 Flash. Autonomously generates high-converting LinkedIn posts, X threads, and email newsletters based on product features.
+2.  **CabinetFlow:** A comprehensive SaaS management system designed to streamline workflows, handle complex data, and boost operational efficiency.
+3.  **Mon Tbib:** A healthcare platform connecting patients with doctors, making medical appointments and patient management entirely seamless.
+4.  **Covoiturage TN:** A dedicated, mobile-responsive ride-sharing application for Tunisia helping users find reliable carpooling options.
+
+---
+
+## 🚀 Running the Project Locally
+
+If you want to clone this repository and run it on your own machine, follow these steps:
+
+### 1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+git clone https://github.com/YOUR_USERNAME/my-portfolio.git](https://github.com/YOUR_USERNAME/my-portfolio.git)](https://github.com/mouhamedsalhy96-a11y/my-portfolio
+cd my-portfolio
