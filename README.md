@@ -2,7 +2,7 @@
 
 A modern, high-performance personal portfolio built to showcase my versatile web applications, AI-integrated tools, and full-stack capabilities. Designed with a sleek dark-mode "Bento Box" UI and backed by a custom database to handle client inquiries.
 
-**Live Site:** Insert Your Vercel Link Here]](https://my-portfolio-delta-seven-49.vercel.app/
+**Live Site:** https://my-portfolio-delta-seven-49.vercel.app/
 **Available for Hire:** https://www.upwork.com/freelancers/~0169de29d821388266
 
 ---
@@ -34,5 +34,5 @@ If you want to clone this repository and run it on your own machine, follow thes
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/my-portfolio.git](https://github.com/YOUR_USERNAME/my-portfolio.git)](https://github.com/mouhamedsalhy96-a11y/my-portfolio
+git clone https://github.com/mouhamedsalhy96-a11y/my-portfolio
 cd my-portfolio
