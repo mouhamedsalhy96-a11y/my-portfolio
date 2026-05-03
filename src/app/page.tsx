@@ -3,31 +3,56 @@ export default function Home() {
   // Replace this with your actual Upwork Profile URL
   const upworkLink = "https://www.upwork.com/freelancers/~0169de29d821388266";
 
+  // 1. Add your new projects and links here!
   const projects = [
     {
       name: "MarketSpark AI",
       description: "An AI-powered marketing engine leveraging Gemini 2.5 Flash. It ingests product features and autonomously generates high-converting LinkedIn posts, X threads, and email newsletters.",
       tags: ["Next.js", "Gemini 2.5 API", "AI Automation"],
-      gridClass: "col-span-1 md:col-span-2 lg:col-span-2 group relative border-slate-800 hover:border-cyan-500/50 overflow-hidden",
-      isFeatured: true
+      gridClass: "col-span-1 md:col-span-2 lg:col-span-2",
+      isFeatured: true,
+      github: "https://github.com/mouhamedsalhy96-a11y/MarketSpark-AI", // Replace with real link
+      live: "https://market-spark-ai-indol.vercel.app/" // Replace with real link
     },
     {
       name: "CabinetFlow",
       description: "A comprehensive management system designed to streamline workflows, handle complex data, and boost operational efficiency.",
       tags: ["SaaS", "Full-Stack"],
-      gridClass: "col-span-1 border-slate-800 hover:border-slate-600"
+      gridClass: "col-span-1",
+      github: "https://github.com/mouhamedsalhy96-a11y/cabinetflow-tunisie",
+      live: "https://cabinetflow-tunisie.vercel.app/" // Leave empty if there is no live demo
     },
     {
       name: "Mon Tbib",
       description: "A healthcare platform connecting patients with doctors, making medical appointments and patient management entirely seamless.",
       tags: ["Healthcare Tech"],
-      gridClass: "col-span-1 border-slate-800 hover:border-slate-600"
+      gridClass: "col-span-1",
+      github: "https://github.com/mouhamedsalhy96-a11y/mon-tbib",
+      live: "https://mon-tbib.vercel.app/"
     },
     {
       name: "Covoiturage TN",
       description: "A dedicated ride-sharing application for Tunisia. Helps users find reliable carpooling options, split costs, and reduce their carbon footprint.",
       tags: ["Mobile-Responsive", "Routing"],
-      gridClass: "col-span-1 md:col-span-2 lg:col-span-2 border-slate-800 hover:border-slate-600"
+      gridClass: "col-span-1 md:col-span-2 lg:col-span-2",
+      github: "https://github.com/mouhamedsalhy96-a11y/covoiturage-tn",
+      live: "https://covoiturage-tn.vercel.app/"
+    },
+    // ADD NEW PROJECTS BELOW
+    {
+      name: "IronWorks Gym",
+      description: "Modern, dark‑themed fitness website with responsive UI, clear membership pricing (day pass, monthly, annual), Stripe checkout flow, a personal training enquiry form, and a location map embed.",
+      tags: ["Tailwind", "Next.js", "Stripe"],
+      gridClass: "col-span-1 md:col-span-2 lg:col-span-2", // Adjust span to fit grid
+      github: "https://github.com/mouhamedsalhy96-a11y/ironworks-gym",
+      live: "https://ironworks-gym-gamma.vercel.app/"
+    },
+    {
+      name: "LoopPilot",
+      description: "mobile fitness route-planning and activity-tracking MVP. The app helps runners and cyclists generate loop routes, choose custom distances, save routes, track activities with GPS, review workout history, view statistics, and export completed activities as GPX files.",
+      tags: ["React Native", "Expo", "TypeScript"],
+      gridClass: "col-span-1",
+      github: "https://github.com/mouhamedsalhy96-a11y/looppilot",
     }
   ];
 
@@ -79,25 +104,66 @@ export default function Home() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
-            <div key={index} className={`bg-slate-900 border rounded-3xl p-8 transition-colors ${project.gridClass}`}>
+            <div 
+              key={index} 
+              // 2. We add "group relative overflow-hidden" here to make the curtain work
+              className={`group relative bg-slate-900 border border-slate-800 rounded-3xl p-8 transition-all overflow-hidden ${project.gridClass}`}
+            >
+              
+              {/* Background Glow for Featured */}
               {project.isFeatured && (
-                <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none"></div>
+                <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none z-0"></div>
               )}
-              <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white relative z-10">{project.name}</h3>
-              <p className="text-slate-400 mb-6 relative z-10 text-sm md:text-lg">{project.description}</p>
-              <div className="flex flex-wrap gap-2 relative z-10">
-                {project.tags.map((tag, tagIndex) => (
-                  <span key={tagIndex} className="bg-slate-950 border border-slate-800 text-cyan-400 text-xs md:text-sm px-3 md:px-4 py-1.5 rounded-full">
-                    {tag}
-                  </span>
-                ))}
+              
+              {/* Standard Card Content */}
+              <div className="relative z-10">
+                <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white">{project.name}</h3>
+                <p className="text-slate-400 mb-6 text-sm md:text-lg">{project.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag, tagIndex) => (
+                    <span key={tagIndex} className="bg-slate-950 border border-slate-800 text-cyan-400 text-xs md:text-sm px-3 md:px-4 py-1.5 rounded-full">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
+
+              {/* 3. The "Falling Curtain" Overlay */}
+              <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-sm flex flex-col items-center justify-center gap-4 transition-all duration-500 transform -translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 z-20">
+                {project.live && (
+                  <a 
+                    href={project.live} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-2 px-6 rounded-full transition-transform hover:scale-105 shadow-lg shadow-cyan-500/20"
+                  >
+                    View Live Demo
+                  </a>
+                )}
+                
+                {project.github && (
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="bg-slate-800 hover:bg-slate-700 text-white font-medium py-2 px-6 rounded-full border border-slate-700 transition-transform hover:scale-105"
+                  >
+                    View GitHub
+                  </a>
+                )}
+
+                {/* Fallback if no links are provided */}
+                {!project.live && !project.github && (
+                  <span className="text-slate-400 font-medium">Internal / NDA Project</span>
+                )}
+              </div>
+
             </div>
           ))}
         </div>
       </section>
       
-      {/* Updated Contact Section */}
+      {/* Contact Section */}
       <section id="contact" className="max-w-2xl mx-auto text-center pb-20">
         <div className="p-12 border border-slate-800 bg-slate-900/50 rounded-[3rem] backdrop-blur-sm">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Let&apos;s build something great together.</h2>

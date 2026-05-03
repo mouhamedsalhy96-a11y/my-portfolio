@@ -13,7 +13,6 @@ This project was built with modern, industry-standard web technologies:
 
 *   **Framework:** [Next.js](https://nextjs.org/) (App Router)
 *   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-*   **Database / Backend:** [Supabase](https://supabase.com/) (PostgreSQL & Row Level Security)
 *   **Deployment:** [Vercel](https://vercel.com/)
 *   **Language:** TypeScript / TSX
 
