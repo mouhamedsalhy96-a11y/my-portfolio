@@ -3,6 +3,15 @@ export default function Home() {
 
   const projects = [
     {
+      name: "RepairDesk",
+      description: "A secure repair-shop workflow app where staff manage repairs, quotes, and progress updates while customers securely view their own repairs and approve or decline quotes. Built as a full-stack product demo with fictional data.",
+      tags: ["Next.js", "TypeScript", "Supabase"],
+      isFeatured: true,
+      github: "https://github.com/mouhamedsalhy96-a11y/repairdesk",
+      live: "https://repairdesk-ashen.vercel.app/login",
+      color: "bg-amber-400"
+    },
+    {
       name: "MedEcho AI",
       description: "A powerful clinical case generator and medical simulation platform. Leverages OpenAI for dynamic cases, ElevenLabs for voice, and automated clinical scoring.",
       tags: ["Python", "Django", "OpenAI"],
