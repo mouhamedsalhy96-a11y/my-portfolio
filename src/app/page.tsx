@@ -1,9 +1,9 @@
 export default function Home() {
-  // Replace these two placeholders with your real contact details.
-  const email = "mo.dev.hamed@gmail.com";
-  const phone = "+44 7576 982999";
+  const email = process.env.CONTACT_EMAIL?.trim() ?? "";
+  const phone = process.env.CONTACT_PHONE?.trim() ?? "";
   const emailLink = `mailto:${email}`;
   const phoneLink = `tel:${phone.replace(/[^\d+]/g, "")}`;
+  const githubLink = "https://github.com/mouhamedsalhy96-a11y?tab=repositories";
 
   return (
     <main className="min-h-screen bg-[#e5e5e5] text-black font-mono p-4 md:p-8 lg:p-12 selection:bg-black selection:text-yellow-400">
@@ -13,17 +13,25 @@ export default function Home() {
         </div>
         <div className="flex flex-wrap justify-center gap-5">
           <a
+            href={githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xl font-black uppercase bg-black text-white px-6 py-3 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 hover:bg-blue-600 transition-all"
+          >
+            GITHUB ↗
+          </a>
+          {email && (<a
             href={emailLink}
             className="text-xl font-black uppercase bg-white text-black px-6 py-3 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 hover:bg-yellow-400 transition-all"
           >
             EMAIL ME ↗
-          </a>
-          <a
+          </a>)}
+          {phone && (<a
             href={phoneLink}
             className="text-xl font-black uppercase bg-yellow-400 text-black px-6 py-3 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 hover:bg-white transition-all"
           >
             CALL ME ↗
-          </a>
+          </a>)}
         </div>
       </nav>
 
@@ -69,20 +77,21 @@ export default function Home() {
             Have a project in mind? Email me or give me a call to discuss your idea.
           </p>
           <div className="grid w-full min-w-0 gap-6">
-            <a
+            {!email && !phone && <p className="bg-white p-4 font-bold text-black">Contact details will be available soon. You can find my repositories on GitHub.</p>}
+            {email && (<a
               href={emailLink}
               className="min-w-0 bg-yellow-400 text-black font-black py-5 px-4 sm:px-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 hover:bg-white transition-all"
             >
               <span className="block text-xl uppercase mb-2">EMAIL ME ↗</span>
               <span className="block break-all text-sm sm:text-lg">{email}</span>
-            </a>
-            <a
+            </a>)}
+            {phone && (<a
               href={phoneLink}
               className="min-w-0 bg-white text-black font-black py-5 px-4 sm:px-8 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 hover:bg-yellow-400 transition-all"
             >
               <span className="block text-xl uppercase mb-2">CALL ME ↗</span>
               <span className="block break-words text-sm sm:text-lg">{phone}</span>
-            </a>
+            </a>)}
           </div>
         </div>
       </section>

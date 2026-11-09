@@ -1,80 +1,19 @@
-# Mohamed Salhi — Personal Portfolio
+# Mohamed Salhi
 
-My personal portfolio website for introducing my work in full-stack web development and AI integrations, and providing a direct way to get in touch.
+**Full-stack web development & AI integrations.**
 
-The site uses bold typography, high-contrast colours, thick borders, and offset shadows. Its layout adapts to mobile and desktop screens.
+My personal portfolio: an introduction to my work, the technologies I use, and a direct way to get in touch.
 
-## Current status
+[View my portfolio](https://my-portfolio-delta-seven-49.vercel.app) · [Explore my GitHub repositories](https://github.com/mouhamedsalhy96-a11y?tab=repositories)
 
-The portfolio is being refreshed. Previous project listings have been removed, and new project case studies will be added as they are completed.
+## Focus
 
-## Features
+- Responsive web interfaces.
+- Full-stack applications.
+- Practical AI integrations.
 
-- Responsive homepage with an introduction and areas of focus.
-- Email and phone contact links.
-- A dedicated contact section.
-- Contact details configured in one place.
+## About this site
 
-## Technology
+Built with Next.js, React, TypeScript, and Tailwind CSS. The design combines bold typography, high-contrast colours, and a responsive layout.
 
-- Next.js
-- React
-- TypeScript
-- Tailwind CSS
-
-## Run locally
-
-From the project folder, install the dependencies:
-
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Open the local URL printed in your terminal, usually `http://localhost:3000`.
-
-## Set your contact details
-
-Open the homepage file containing the `Home` component. In a Next.js App Router project, this is usually `app/page.tsx` or `src/app/page.tsx`.
-
-Replace the two placeholders near the top:
-
-```tsx
-const email = "YOUR_EMAIL@example.com";
-const phone = "+00 000 000 000";
-```
-
-Use your real email address and a phone number with its international country code. The email and call buttons use these values automatically.
-
-Replace both placeholders before publishing the site.
-
-## Update the content
-
-Edit the homepage component to change the introduction, availability, areas of focus, and contact text.
-
-Tailwind utility classes in the component control the layout, colours, typography, borders, and shadows.
-
-## Production build
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-Run the production build locally:
-
-```bash
-npm run start
-```
-
-## Publish changes
-
-Save and review your changes, commit them to Git, and push to the branch used by your hosting provider.
-
-If automatic deployment is configured for that branch, check the hosting dashboard for the new deployment and its build status.
+New work will be added as projects are completed.
