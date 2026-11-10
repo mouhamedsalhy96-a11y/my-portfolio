@@ -1,3 +1,5 @@
+import { FeaturedProject } from "@/components/featured-project";
+
 export default function Home() {
   const email = process.env.CONTACT_EMAIL?.trim() ?? "";
   const phone = process.env.CONTACT_PHONE?.trim() ?? "";
@@ -12,6 +14,7 @@ export default function Home() {
           MOHAMED<br />SALHI
         </div>
         <div className="flex flex-wrap justify-center gap-5">
+          <a href="#projects" className="text-xl font-black uppercase bg-yellow-400 text-black px-6 py-3 border-4 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-2 hover:translate-y-2 hover:bg-white transition-all">PROJECTS ↓</a>
           <a
             href={githubLink}
             target="_blank"
@@ -64,6 +67,8 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      <FeaturedProject />
 
       <section id="contact" className="max-w-5xl mx-auto text-center pb-24">
         <div className="p-6 sm:p-10 md:p-20 border-8 border-black bg-red-500 shadow-[24px_24px_0px_0px_rgba(0,0,0,1)] flex flex-col items-center">
