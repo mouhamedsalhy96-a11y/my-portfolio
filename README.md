@@ -18,6 +18,12 @@ Built with Next.js, React, TypeScript, and Tailwind CSS. The design combines bol
 
 ## Featured work
 
+[Jibli](https://my-portfolio-delta-seven-49.vercel.app/projects/jibli) — a French-language quote and order prototype for Tunisia, with customer accounts, versioned TND quotes, protected administration, and simulated payment and delivery tracking.
+
+[Live prototype](https://jibli-lac.vercel.app/) · [Project repository](https://github.com/mouhamedsalhy96-a11y/Jibli)
+
+Payments and fulfilment are simulated; the app does not collect money or arrange real transport.
+
 [Clinic Enquiry Tracker](https://my-portfolio-delta-seven-49.vercel.app/projects/clinic-enquiry-tracker) — a full-stack administrative enquiry workflow with staff authentication, status tracking, and internal notes. The case study includes screenshots, implementation choices, and verification.
 
 [Live application](https://clinic-enquiry-tracker.vercel.app) · [Project repository](https://github.com/mouhamedsalhy96-a11y/clinic-enquiry-tracker)
