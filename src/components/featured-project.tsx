@@ -18,7 +18,7 @@ export function FeaturedProject() {
         <Link href={project.path} aria-label={`Read the ${project.title} case study`} className={"group relative flex min-w-0 items-center border-b-8 border-black p-4 sm:p-7 lg:border-r-8 lg:border-b-0 " + project.imageBackground}>
           <div className="w-full border-4 border-black bg-white shadow-[6px_6px_0_0_#000] transition-transform group-hover:-translate-y-1">
             <div className="flex items-center gap-1.5 border-b-4 border-black bg-yellow-400 px-3 py-2" aria-hidden="true"><span className="h-2 w-2 shrink-0 bg-black"/><span className="h-2 w-2 shrink-0 bg-black"/><span className="h-2 w-2 shrink-0 bg-black"/><span className="ml-auto text-right text-[10px] font-black uppercase sm:text-xs">{project.coverLabel}</span></div>
-            <div className={"relative overflow-hidden " + (project.title === "Forma" ? "aspect-[1831/1096]" : "aspect-[4/3]")}><Image src={project.cover.src} alt={project.cover.alt} fill sizes="(max-width: 1023px) 90vw, 55vw" className="object-cover object-top" /></div>
+            <div className="relative overflow-hidden" style={{ aspectRatio: project.cover.width + " / " + project.cover.height }}><Image src={project.cover.src} alt={project.cover.alt} fill sizes="(max-width: 1023px) 90vw, 55vw" className="object-cover object-top" /></div>
           </div>
         </Link>
         <div className="min-w-0 p-6 sm:p-9">

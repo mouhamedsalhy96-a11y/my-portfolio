@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Clinic Enquiry Tracker — Mohamed Salhi",
     description: project.summary,
     type: "article",
-    images: [{ url: "https://my-portfolio-delta-seven-49.vercel.app" + project.screenshots.inbox.src, width: 1416, height: 967, alt: project.screenshots.inbox.alt }],
+    images: [{ url: "https://my-portfolio-delta-seven-49.vercel.app" + project.screenshots.inbox.src, width: project.screenshots.inbox.width, height: project.screenshots.inbox.height, alt: project.screenshots.inbox.alt }],
   },
 };
 

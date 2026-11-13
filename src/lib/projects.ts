@@ -6,7 +6,7 @@ export const clinicProject = {
   repositoryUrl: "https://github.com/mouhamedsalhy96-a11y/clinic-enquiry-tracker",
   stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "Cloudflare Turnstile"],
   screenshots: {
-    inbox: { src: "/projects/clinic-enquiry-tracker/inbox.png", width: 1416, height: 967, alt: "Staff enquiry inbox with search, category and date filters, and three sample enquiries." },
+    inbox: { src: "/projects/clinic-enquiry-tracker/inbox-calendar.png", width: 1832, height: 1266, alt: "Clinic staff inbox with styled calendar date filters, three sample enquiries, and a resolved enquiry with its internal note." },
     form: { src: "/projects/clinic-enquiry-tracker/public-form.png", width: 700, height: 1235, alt: "Public enquiry form with contact fields, an administrative message, fictional-data acknowledgement, and a completed Turnstile check." },
     details: { src: "/projects/clinic-enquiry-tracker/details.png", width: 395, height: 1103, alt: "Workflow Test enquiry marked In progress with the saved internal note Opening hours checked." },
   },
